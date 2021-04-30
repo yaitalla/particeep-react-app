@@ -1,8 +1,8 @@
 import React from 'react';
-import { Wrap, P, BtnWrap, ChoiceBtn,
-    RadioInput, RadioWrap, RadioContainer
+import { Wrap, BtnWrap, ChoiceBtn,
+    // RadioInput, RadioWrap, RadioContainer
 } from './styled';
-import {SET_LIMIT, SET_PAGE} from '../../constants';
+import {SET_LIMIT} from '../../constants';
 
 const FilterNumber = ({ cb }) => {
     return (

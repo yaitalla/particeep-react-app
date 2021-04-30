@@ -12,11 +12,14 @@ const initialStore = {
     maxPage: 0
 }
 const reducer = (store, {type, payload}) => {
+    // console.log(type, payload)
     switch(type) {
         case FETCH_MOVIES:
             return {
                 ...store,
-                movies: payload
+                movies: payload.movies,
+                currentPage: payload.current,
+                maxPage: payload.maxPages
             }
         case DELETE_MOVIE:{
             const newMovies = store.movies.filter(el => el.id !== payload)
@@ -58,7 +61,6 @@ const reducer = (store, {type, payload}) => {
                 ...store,
                 currentPage: payload.current,
                 offset: payload.offset,
-                maxPage: payload.maxPage
             }
         default:
             return {

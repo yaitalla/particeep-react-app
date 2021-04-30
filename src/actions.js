@@ -1,7 +1,11 @@
 import {movies$} from './movies';
 import { DELETE_MOVIE, UPDATE_LIKES, UPDATE_DISLIKES,
-    FETCH_MOVIES
+    FETCH_MOVIES, SET_PAGE
 } from './constants';
+
+export const changePage = (dispatch, payload) => {
+    dispatch({type: SET_PAGE, payload})
+}
 
 export const deleteMovie = (id, dispatch) => {
     dispatch({type: DELETE_MOVIE, payload: id})

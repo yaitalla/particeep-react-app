@@ -10,16 +10,13 @@ export const Left = styled.div`
     min-width: 60px;
     min-height: 60px;
     border-radius: 50%;
+    border: 1px solid #161B22;
     color: white;
     background: rgba(255, 255, 255, 0.2);
     &:hover {
         background: rgba(255, 255, 255, 0.6);
         color: #16738D;
-        cursor: pointer;
-    }
-    @media (max-width: 600px) {
-        left: 15%;
-        bottom: 25%;
+        cursor: ${props => props.displaying ? "pointer" : "not-allowed"};
     }
 `;
 export const Right = styled.div`
@@ -32,14 +29,11 @@ export const Right = styled.div`
     min-width: 60px;
     min-height: 60px;
     border-radius: 50%;
+    border: 1px solid #161B22;
     background: rgba(255, 255, 255, 0.2);
     &:hover {
         background: rgba(255, 255, 255, 0.6);
         color: #16738D;
-        cursor: pointer;
-    }
-    @media (max-width: 600px) {
-        right: 15%;
-        bottom: 25%;
+        cursor: ${props => props.displaying ? "pointer" : "not-allowed"};
     }
 `;

@@ -21,6 +21,8 @@ export const Main = styled.main`
 export const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
 `;
 export const Card = styled.div`
     margin: 1rem;

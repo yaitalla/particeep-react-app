@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Left = styled.div`
-    position: fixed;
     z-index: 10;
     display: flex;
     justify-content: center;
     left: 5%;
     top: 5%;
+    width: 60px;
+    height: 60px;
     min-width: 60px;
     min-height: 60px;
     border-radius: 50%;
@@ -16,16 +17,17 @@ export const Left = styled.div`
     &:hover {
         background: rgba(255, 255, 255, 0.6);
         color: #16738D;
-        cursor: ${props => props.displaying ? "pointer" : "not-allowed"};
+        cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
     }
 `;
 export const Right = styled.div`
     color: white;
-    position: fixed;
     display: flex;
     justify-content: center;
     right: 5%;
     top: 5%;
+    width: 60px;
+    height: 60px;
     min-width: 60px;
     min-height: 60px;
     border-radius: 50%;
@@ -34,6 +36,6 @@ export const Right = styled.div`
     &:hover {
         background: rgba(255, 255, 255, 0.6);
         color: #16738D;
-        cursor: ${props => props.displaying ? "pointer" : "not-allowed"};
+        cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
     }
 `;

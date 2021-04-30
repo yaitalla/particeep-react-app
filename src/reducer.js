@@ -7,9 +7,7 @@ const Context = createContext();
 const initialStore = {
     movies: [],
     currentPage: 1,
-    offset: 0,
     limit: 4,
-    maxPage: 0
 }
 const reducer = (store, {type, payload}) => {
     // console.log(type, payload)
@@ -19,7 +17,6 @@ const reducer = (store, {type, payload}) => {
                 ...store,
                 movies: payload.movies,
                 currentPage: payload.current,
-                maxPage: payload.maxPages
             }
         case DELETE_MOVIE:{
             const newMovies = store.movies.filter(el => el.id !== payload)
@@ -54,20 +51,19 @@ const reducer = (store, {type, payload}) => {
             return {
                 ...store,
                 limit: payload,
-
-            }
+                currentPage: 1
+            };
         case SET_PAGE:
             return {
                 ...store,
-                currentPage: payload.current,
-                offset: payload.offset,
-            }
+                currentPage: payload,
+            };
         default:
             return {
                 ...store
-            }
+            };
     }
-}
+};
 
 export {
     initialStore,

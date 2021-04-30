@@ -11,7 +11,7 @@ export const Wrap = styled.div`
     flex-grow: 1;
     flex-shrink: 0;
     border: 1px solid #eaeaea;
-    border-raidus: 10px;
+    border-radius: 10px;
     flex-basis: 33.3333%;
 	flex-basis: 300px;
     max-width: 300px;
@@ -22,7 +22,6 @@ export const Title = styled.h1`
     position: relative;
     font-size: 20px;
     margin: 0;
-    widht: 100%;
 `;
 export const P = styled.p`
     margin-left: 5px;
@@ -85,8 +84,5 @@ export const LikeRatio = styled.progress`
     color: lightgreen;
     border-radius: 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    ::before{
-        content: '80%',
-        color: lightgreen;
-    }
+    
 `;

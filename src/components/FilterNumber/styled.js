@@ -7,37 +7,21 @@ export const Wrap = styled.div`
     align-items: center;
     justify-content: space-between;
 `;
-export const P = styled.p``;
 
 export const BtnWrap = styled.div`
     display: flex;
     flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
 `;
 
 export const ChoiceBtn = styled.button`
     text-decoration: none;
-    width: 20px;
+    width: 33px;
+    justify-content: center;
+    text-align: center;
     display: flex;
     align-items: center;
-`;
-
-export const RadioWrap = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-`;
-
-export const RadioContainer = styled.div`
-    display: flex;
-    border-radius: 4px;
-    flex-direction: row;
-    width: 180px;
-    background: #2b2e31;
-`;
-
-export const RadioInput = styled.input`
-    display: block;
-    width: 24px;
-    height: 24px;
+    cursor: pointer;
 `;

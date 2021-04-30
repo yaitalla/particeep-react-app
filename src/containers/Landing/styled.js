@@ -21,14 +21,16 @@ export const Main = styled.main`
 export const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
     padding: 0;
     justify-content: center;
+    width: 100%;
 `;
 export const Card = styled.div`
     margin: 1rem;
     padding: 1.5rem;
     border: 1px solid #eaeaea;
-    border-raidus: 10px;
+    border-radius: 10px;
 `;
 export const H1 = styled.h1``;
 export const H3 = styled.h3``;

@@ -15,6 +15,7 @@ export const Wrap = styled.div`
     flex-basis: 33.3333%;
 	flex-basis: 300px;
     max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     overflow: none;
 `;
 export const Title = styled.h1`
@@ -82,8 +83,8 @@ export const LikeRatio = styled.progress`
     -webkit-appearance: none;
     background-color: #f56342;
     color: lightgreen;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     ::before{
         content: '80%',
         color: lightgreen;

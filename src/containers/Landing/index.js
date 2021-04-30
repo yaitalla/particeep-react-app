@@ -5,8 +5,9 @@ import { deleteMovie, updateDislike, updateLike,
 } from '../../actions';
 import Card from '../../components/CardComponent';
 import { movies$ } from '../../movies';
-// import FilterNumber from '../../components/FilterNumber';
+import FilterNumber from '../../components/FilterNumber';
 import { FETCH_MOVIES } from '../../constants';
+import { ArrowLeft, ArrowRight } from '../../components/Arrows';
 
 
 const Landing = () => {
@@ -19,10 +20,12 @@ const Landing = () => {
     useEffect(() => {
         fetchMovies();
     }, [])
+    console.log(store)
 
     return (
         <Wrap>
-            {/* <FilterNumber cb={dispatch}/> */}
+            <ArrowLeft cb={() => console.log('left')} />
+            <FilterNumber cb={dispatch}/>
             <Main>
                 <Grid>
                     {   store ?
@@ -35,7 +38,7 @@ const Landing = () => {
                     }
                 </Grid>
             </Main>
-                
+            <ArrowRight cb={() => console.log('right')} />
         </Wrap>
     )
 }

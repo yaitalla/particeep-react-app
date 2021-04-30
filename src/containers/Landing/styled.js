@@ -6,6 +6,7 @@ export const Wrap = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: white;
     padding: 0.5rem;
 
 `;

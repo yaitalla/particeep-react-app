@@ -5,7 +5,6 @@ export const FilterWrap = styled.div`
     position: relative;
     width: 200px;
     min-width: 150px;
-    height: 100px;
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
@@ -31,7 +30,7 @@ export const ChoiceButton = styled.button`
     align-items: center;
     cursor: pointer;
     transition: 0.2 ease;
-    /* margin-left: 20px; */
+    background-color: ${props => props.clicked ? "silver" : "white"} ;
     &:hover{
         transform: scale(1.1);
     }

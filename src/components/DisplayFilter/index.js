@@ -2,7 +2,7 @@ import React from 'react';
 import { FilterWrap, ButtonWrap, ChoiceButton } from './styled';
 import { changeLimit } from '../../actions';
 
-const FilterByNumber = ({ cb }) => {
+const FilterByNumber = ({ cb, limit }) => {
     const values = [4, 8, 12];
     return (
         <FilterWrap>
@@ -10,7 +10,7 @@ const FilterByNumber = ({ cb }) => {
             <ButtonWrap>
                 {
                     values.map((value, i) =>
-                        <ChoiceButton onClick={() => changeLimit(value, cb)} key={i}>
+                        <ChoiceButton clicked={limit === value} onClick={() => changeLimit(value, cb)} key={i}>
                             {value}
                         </ChoiceButton>
                     )

@@ -46,7 +46,7 @@ const Landing = () => {
         <LandingWrapper>
             <BoardWrap>
                 <CategoryFilter checkFilter={checkFilter} categories={categories} filters={filters} />
-                <FilterByNumber cb={dispatch}/>
+                <FilterByNumber cb={dispatch} limit={limit}/>
                 <Pagination dispatch={dispatch}/>
             </BoardWrap>
             

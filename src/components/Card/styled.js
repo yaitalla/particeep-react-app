@@ -4,18 +4,18 @@ export const MovieCardWrap = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
     margin: 1rem;
-    padding: 1.2rem 2rem;
-    height: 300px;
+    padding: 1.2rem;
+    height: 230px;
     flex-grow: 1;
     flex-shrink: 0;
     border: 1px solid #eaeaea;
     border-radius: 10px;
     flex-basis: 33.3333%;
-	flex-basis: 200px;
+	width: 200px;
     max-width: 200px;
     overflow: none;
     color: black;
@@ -26,11 +26,11 @@ export const MovieCardWrap = styled.div`
 `;
 export const MovieTitle = styled.h1`
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
 `;
 export const LikesCount = styled.p`
-    margin-left: 5px;
+    margin: 5px;
 `;
 export const MovieCategory = styled.p`
 `;
@@ -49,8 +49,7 @@ export const ReactionsWrapper = styled.div`
 `;
 export const Likes = styled.div`
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;    
@@ -61,8 +60,7 @@ export const Dislikes = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;    
-    width: 60px;
-    height: 60px;
+    width: 50px;
     transition: ease .2s;
 `;
 
@@ -73,8 +71,9 @@ export const ThumbIcons = styled.div`
 
 export const LikeDislikeRatio = styled.progress`
     position: relative;
-    align-self: flex-start;
-    height: 30px;
+    height: 20px;
+    margin: 1.2rem;
+    width: 100px;
     background-color: #f56342;
     color: #90EE90;
     border-radius: 3px;
@@ -89,10 +88,11 @@ export const LikeDislikeRatio = styled.progress`
 `;
 
 export const TrashIconSvg = styled.img`
-    width: 30px;
-    height: 30px;
+    margin-top: auto;
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
     transition: 0.1s ease;
-    align-self: flex-end;
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
@@ -106,4 +106,21 @@ export const ThumbIconSvg = styled.img`
         cursor: pointer;
         transform: scale(1.1) rotate(${props => props.down ? 180 : 0}deg);
     }
+`;
+
+export const CountLine = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    width: 40%;
+`;
+
+export const CardBody = styled.div`
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 `;

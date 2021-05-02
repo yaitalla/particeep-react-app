@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const Wrap = styled.div`
+export const MovieCardWrap = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -8,14 +8,15 @@ export const Wrap = styled.div`
     align-items: center;
     position: relative;
     margin: 1rem;
-    height: 400px;
+    padding: 1.2rem 2rem;
+    height: 300px;
     flex-grow: 1;
     flex-shrink: 0;
     border: 1px solid #eaeaea;
     border-radius: 10px;
     flex-basis: 33.3333%;
-	flex-basis: 300px;
-    max-width: 300px;
+	flex-basis: 200px;
+    max-width: 200px;
     overflow: none;
     color: black;
     background-color: white;
@@ -23,86 +24,86 @@ export const Wrap = styled.div`
     -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 `;
-export const Title = styled.h1`
+export const MovieTitle = styled.h1`
     position: relative;
     font-size: 20px;
     margin: 0;
 `;
-export const P = styled.p`
+export const LikesCount = styled.p`
     margin-left: 5px;
 `;
-export const Category = styled.p`
+export const MovieCategory = styled.p`
 `;
-export const CardHead = styled.div`
+export const MovieCardHead = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 `;
-export const Bar = styled.div`
-    height: 50px;
-    justify-content: space-around;
-    width: 100%;
+export const ReactionsWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 `;
 export const Likes = styled.div`
     display: flex;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    flex-direction: row;
-    justify-content: center;
+    width: 60px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;    
-    background: lightgreen;
     transition: ease .2s;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-    }
 `;
 export const Dislikes = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;    
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    background: #f56342;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-    }
+    width: 60px;
+    height: 60px;
+    transition: ease .2s;
 `;
 
-export const LikesInfos = styled.div`
+export const ThumbIcons = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    border: 1px solid;
 `;
 
-export const LikeRatio = styled.progress`
-    -webkit-appearance: none;
+export const LikeDislikeRatio = styled.progress`
+    position: relative;
+    align-self: flex-start;
+    height: 30px;
     background-color: #f56342;
-    color: lightgreen;
+    color: #90EE90;
     border-radius: 3px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    ::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: lightgreen;
+    }
     
 `;
 
-export const TrashSvg = styled.img`
-    width: 50px;
-    height: 50px;
+export const TrashIconSvg = styled.img`
+    width: 30px;
+    height: 30px;
+    transition: 0.1s ease;
+    align-self: flex-end;
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
     }
 `;
 
-export const ThumbSvg = styled.img`
+export const ThumbIconSvg = styled.img`
+    transition: 0.1s ease;
     transform: rotate(${props => props.down ? 180 : 0}deg);
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1) rotate(${props => props.down ? 180 : 0}deg);
+    }
 `;

@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { Context } from './reducer';
 import {changePage} from './actions';
-import { SET_FILTERS } from './constants';
+import { SET_CATEGORY_FILTERS } from './constants';
 
 export const usePage = () => {
     const {store, dispatch} = useContext(Context);
@@ -47,7 +47,7 @@ export const useFilter = () => {
         }
     )
     const setFilters = (newFilters) => {
-        dispatch({type: SET_FILTERS, payload: newFilters})
+        dispatch({type: SET_CATEGORY_FILTERS, payload: newFilters})
     }
     
     return [categories, filters, setFilters];

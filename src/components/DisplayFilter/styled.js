@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const Wrap = styled.div`
+export const FilterWrap = styled.div`
     display: flex;
     position: relative;
     width: 200px;
@@ -9,20 +9,20 @@ export const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 2mm ridge rgba(220, 220, 220, .6);
+    /* background-color: rgba(255, 255, 255, 0.5); */
     justify-content: flex-start;
 `;
 
-export const BtnWrap = styled.div`
+export const ButtonWrap = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
     justify-content: center;
 `;
 
-export const ChoiceBtn = styled.button`
+export const ChoiceButton = styled.button`
     text-decoration: none;
     width: 33px;
     justify-content: center;
@@ -31,6 +31,7 @@ export const ChoiceBtn = styled.button`
     align-items: center;
     cursor: pointer;
     transition: 0.2 ease;
+    /* margin-left: 20px; */
     &:hover{
         transform: scale(1.1);
     }

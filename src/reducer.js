@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { FETCH_MOVIES, DELETE_MOVIE, UPDATE_LIKES,
-    UPDATE_DISLIKES, SET_LIMIT, SET_PAGE, SET_FILTERS
+    UPDATE_DISLIKES, SET_DISPLAY_LIMIT, SET_PAGE, SET_CATEGORY_FILTERS
 } from './constants';
 const Context = createContext();
 
@@ -11,7 +11,6 @@ const initialStore = {
     filters: []
 }
 const reducer = (store, {type, payload}) => {
-    console.log(type, payload)
     switch(type) {
         case FETCH_MOVIES:
             return {
@@ -23,7 +22,8 @@ const reducer = (store, {type, payload}) => {
             const newMovies = store.movies.filter(el => el.id !== payload)
             return {
                 ...store,
-                movies: newMovies
+                movies: newMovies,
+                
             }
         }
         case UPDATE_LIKES:{
@@ -48,7 +48,7 @@ const reducer = (store, {type, payload}) => {
                 movies: newMovies
             }
         }
-        case SET_LIMIT:
+        case SET_DISPLAY_LIMIT:
             return {
                 ...store,
                 limit: payload,
@@ -59,7 +59,7 @@ const reducer = (store, {type, payload}) => {
                 ...store,
                 currentPage: payload,
             };
-        case SET_FILTERS:
+        case SET_CATEGORY_FILTERS:
             return {
                 ...store,
                 filters: payload,

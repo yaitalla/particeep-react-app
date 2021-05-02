@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const Wrap = styled.div`
+export const LandingWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -9,9 +9,8 @@ export const Wrap = styled.div`
     min-width: 100vw;
     background-color: #ccc;
     padding: 0;
-
 `;
-export const Main = styled.main`
+export const MainLayout = styled.main`
     display: flex;
     width: 80%;
     position: relative;
@@ -34,5 +33,13 @@ export const Card = styled.div`
     border: 1px solid #eaeaea;
     border-radius: 10px;
 `;
-export const H1 = styled.h1``;
-export const H3 = styled.h3``;
+
+export const BoardWrap = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    background-color: white;
+    margin: 0;
+`;

@@ -1,10 +1,10 @@
 import {movies$} from './movies';
 import { DELETE_MOVIE, UPDATE_LIKES, UPDATE_DISLIKES,
-    FETCH_MOVIES, SET_PAGE, SET_LIMIT, SET_FILTERS
+    FETCH_MOVIES, SET_PAGE, SET_DISPLAY_LIMIT, SET_CATEGORY_FILTERS
 } from './constants';
 
 export const changeFilters = (dispatch, payload) => {
-    dispatch({type: SET_FILTERS, payload})
+    dispatch({type: SET_CATEGORY_FILTERS, payload})
 }
 
 export const changePage = (dispatch, payload) => {
@@ -23,7 +23,7 @@ export const updateDislike = (id, dispatch) => {
 }
 
 export const changeLimit = (newLimit, dispatch) => {
-    dispatch({type: SET_LIMIT, payload: newLimit})
+    dispatch({type: SET_DISPLAY_LIMIT, payload: newLimit})
 }
 
 export const fetchMovies = async (dispatch) => {

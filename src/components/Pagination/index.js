@@ -1,24 +1,20 @@
 import React from 'react';
-import FilterNumber from '../FilterNumber';
-import Select from '../Select';
-import { ArrowLeft, ArrowRight } from '../Arrows';
-import { Wrap, Pages, P } from './styled';
+import { LeftArrow, RightArrow } from '../Arrows';
+import { PaginationWrap, Pages, P } from './styled';
 import {usePage} from '../../customHooks';
 
-const Pagination = () => {
+const Pagination = ({dispatch}) => {
     const [ handleChangePage, totalPages,  hasNextPage,
-        hasPrevPage, currentPage, dispatch
+        hasPrevPage, currentPage
     ] = usePage();
     return (
-        <Wrap>
-            <ArrowLeft disabled={!hasPrevPage} onClick={() => handleChangePage(currentPage - 1)} />
-            <FilterNumber cb={dispatch} />
+        <PaginationWrap>
+            <LeftArrow disabled={!hasPrevPage} onClick={() => handleChangePage(currentPage - 1)} />
             <Pages>
                 <P>page {currentPage}/{totalPages}</P>
             </Pages>
-            <Select />
-            <ArrowRight disabled={!hasNextPage} onClick={() => handleChangePage(currentPage + 1)} />
-        </Wrap>
+            <RightArrow disabled={!hasNextPage} onClick={() => handleChangePage(currentPage + 1)} />
+        </PaginationWrap>
     )
 }
 

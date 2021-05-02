@@ -1,19 +1,18 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const Wrap = styled.div`
+export const CategoryFilterWrap = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
     justify-content: flex-start;
-    align-items: center;
-    width: 200px;
-    min-width: 150px;
-    height: 100px;
+    /* align-items: center; */
+    /* width: 200px; */
+    /* min-width: 150px; */
+    /* height: 100px; */
     padding: 0;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.5);
-    overflow: scroll;
-    border: 2mm ridge rgba(220, 220, 220, .6);
+    /* background-color: rgba(255, 255, 255, 1); */
+    /* overflow: scroll; */
 `;
 
 export const FiltersGrid = styled.div`
@@ -38,4 +37,5 @@ export const Filter = styled.button`
     &:hover{
         transform: scale(1.1);
     }
+    /* margin-left: 20px; */
 `;

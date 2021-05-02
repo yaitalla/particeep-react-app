@@ -15,7 +15,7 @@ export const Left = styled.div`
     color: white;
     background: rgba(255, 255, 255, 0.2);
     &:hover {
-        background: rgba(255, 255, 255, 0.6);
+        background: ${props => props.disabled ? " rgba(255, 255, 255, 0.2)" : " rgba(255, 255, 255, 0.8)"};
         color: #16738D;
         cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
     }
@@ -34,7 +34,7 @@ export const Right = styled.div`
     border: 1px solid #161B22;
     background: rgba(255, 255, 255, 0.2);
     &:hover {
-        background: rgba(255, 255, 255, 0.6);
+        background: ${props => props.disabled ? " rgba(255, 255, 255, 0.2)" : " rgba(255, 255, 255, 0.8)"};
         color: #16738D;
         cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
     }

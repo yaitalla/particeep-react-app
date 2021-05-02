@@ -3,16 +3,18 @@ import styled from 'styled-components';
 export const Wrap = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background-color: white;
-    padding: 0.5rem;
+    min-width: 100vw;
+    background-color: #ccc;
+    padding: 0;
 
 `;
 export const Main = styled.main`
     display: flex;
     width: 80%;
+    position: relative;
     height: 100%;
     justify-content: center;
     align-items: center;

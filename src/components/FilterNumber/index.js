@@ -1,20 +1,21 @@
 import React from 'react';
-import { Wrap, BtnWrap, ChoiceBtn,
-} from './styled';
-import {SET_LIMIT} from '../../constants';
+import { Wrap, BtnWrap, ChoiceBtn } from './styled';
+import { changeLimit } from '../../actions';
 
-const FilterNumber = ({ cb, pages, total }) => {
+const FilterNumber = ({ cb }) => {
+    const values = [4, 8, 12];
     return (
         <Wrap>
             <p>change display</p>
-            
             <BtnWrap>
-                <ChoiceBtn onClick={() => cb({type: SET_LIMIT, payload: 4})} >4</ChoiceBtn>
-                <ChoiceBtn onClick={() => cb({type: SET_LIMIT, payload: 8})} >8</ChoiceBtn>
-                <ChoiceBtn onClick={() => cb({type: SET_LIMIT, payload: 12})} >12</ChoiceBtn>
+                {
+                    values.map((value, i) =>
+                        <ChoiceBtn onClick={() => changeLimit(value, cb)} key={i}>
+                            {value}
+                        </ChoiceBtn>
+                    )
+                }
             </BtnWrap>
-
-            <p>page {pages}/{total}</p>
         </Wrap>
     )
 }

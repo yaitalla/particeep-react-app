@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { FETCH_MOVIES, DELETE_MOVIE, UPDATE_LIKES,
-    UPDATE_DISLIKES, SET_LIMIT, SET_PAGE
+    UPDATE_DISLIKES, SET_LIMIT, SET_PAGE, SET_FILTERS
 } from './constants';
 const Context = createContext();
 
@@ -8,9 +8,10 @@ const initialStore = {
     movies: [],
     currentPage: 1,
     limit: 4,
+    filters: []
 }
 const reducer = (store, {type, payload}) => {
-    // console.log(type, payload)
+    console.log(type, payload)
     switch(type) {
         case FETCH_MOVIES:
             return {
@@ -58,6 +59,12 @@ const reducer = (store, {type, payload}) => {
                 ...store,
                 currentPage: payload,
             };
+        case SET_FILTERS:
+            return {
+                ...store,
+                filters: payload,
+                currentPage: 1
+            }
         default:
             return {
                 ...store

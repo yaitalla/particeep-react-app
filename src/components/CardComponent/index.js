@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrap, Title, P, Bar,
+import { Wrap, Title, P, Bar, Category,
     Likes, Dislikes, CardHead, LikeRatio
 } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +11,7 @@ const Card = ({data, cb}) => {
         <Wrap>
             <CardHead>
                 <Title>{data.title}</Title>
-                <p>{data.category}</p>
+                <Category>{data.category}</Category>
             </CardHead>
             <LikeRatio value={data.likes} max={data.likes+data.dislikes} ></LikeRatio>
             <Bar>
@@ -24,7 +24,9 @@ const Card = ({data, cb}) => {
                     <P>{data.dislikes}</P>
                 </Dislikes>
             </Bar>
-            <FontAwesomeIcon className="trash-icon" color="grey" onClick={() => deleteMovie(data.id, cb)} size={"2x"} icon={faTrash} />
+            <FontAwesomeIcon className="trash-icon" color="grey" icon={faTrash} 
+                            onClick={() => deleteMovie(data.id, cb)} size={"2x"}
+            />
         </Wrap>
     )
 }

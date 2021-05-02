@@ -1,13 +1,17 @@
 import { useContext, useMemo } from 'react';
 import { Context } from './reducer';
 import {changePage} from './actions';
+import { SET_FILTERS } from './constants';
 
 export const usePage = () => {
     const {store, dispatch} = useContext(Context);
-    const {movies, limit, currentPage } = store;
+    const {movies, limit, currentPage, filters } = store;
     
-    const totalPages = useMemo(() => Math.ceil(movies.length / limit), [movies, limit]) ;
-    
+    const totalPages = useMemo(() => Math.ceil(movies.filter( movie =>
+            (filters.length === 0)
+            || filters.indexOf(movie.category) !== -1
+        ).length / limit), [movies, limit, filters, filters.length]) ;
+
     const hasPrevPage = currentPage > 1;
     const hasNextPage = currentPage < totalPages;
     
@@ -30,4 +34,21 @@ export const useOffset = () => {
     const offset = useMemo(() => limit * (currentPage - 1), [currentPage, limit]) ;
 
     return offset;
+}
+
+export const useFilter = () => {
+    const {store, dispatch} = useContext(Context);
+    const { movies, filters } = store;
+    const categories = [];
+    movies.map(movie => {
+            if (categories.indexOf(movie.category) === -1) {
+                categories.push(movie.category)
+            }
+        }
+    )
+    const setFilters = (newFilters) => {
+        dispatch({type: SET_FILTERS, payload: newFilters})
+    }
+    
+    return [categories, filters, setFilters];
 }

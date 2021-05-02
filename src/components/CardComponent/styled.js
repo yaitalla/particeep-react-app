@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrap = styled.div`
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -15,8 +16,12 @@ export const Wrap = styled.div`
     flex-basis: 33.3333%;
 	flex-basis: 300px;
     max-width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     overflow: none;
+    color: black;
+    background-color: white;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 `;
 export const Title = styled.h1`
     position: relative;
@@ -25,6 +30,8 @@ export const Title = styled.h1`
 `;
 export const P = styled.p`
     margin-left: 5px;
+`;
+export const Category = styled.p`
 `;
 export const CardHead = styled.div`
     display: flex;

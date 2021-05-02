@@ -10,9 +10,8 @@ import { useOffset } from '../../customHooks';
 
 const Landing = () => {
     const {store, dispatch} = useContext(Context);
-    const { limit } = store;
+    const { limit, filters } = store;
     const offset = useOffset();
-
 
     const fetchMovies = async () => {
         const res = await movies$;
@@ -32,7 +31,7 @@ const Landing = () => {
             <Main>
                 <Grid>
                     {
-                        store?.movies?.slice(offset, offset + limit).map((item, i) =>
+                        store?.movies?.filter(movie => (filters.length === 0) || filters.indexOf(movie.category) !== -1 ).slice(offset, offset + limit).map((item, i) =>
                             <Card key={i} updateLike={updateLike}
                                 deleteMovie={deleteMovie} i={i} data={item}
                                 updateDislike={updateDislike} cb={dispatch}
@@ -41,9 +40,6 @@ const Landing = () => {
                     }
                 </Grid>
             </Main>
-            {/* <ArrowLeft disabled={!hasPrevPage} onClick={() => handleChangePage(currentPage - 1)} />
-            <FilterNumber pages={currentPage} total={totalPages} cb={dispatch}/>
-            <ArrowRight disabled={!hasNextPage} onClick={() => handleChangePage(currentPage + 1)} /> */}
         </Wrap>
     )
 }

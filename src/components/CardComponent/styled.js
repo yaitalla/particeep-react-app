@@ -93,3 +93,16 @@ export const LikeRatio = styled.progress`
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     
 `;
+
+export const TrashSvg = styled.img`
+    width: 50px;
+    height: 50px;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+`;
+
+export const ThumbSvg = styled.img`
+    transform: rotate(${props => props.down ? 180 : 0}deg);
+`;

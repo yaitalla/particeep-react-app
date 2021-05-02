@@ -11,7 +11,6 @@ const initialStore = {
     filters: []
 }
 const reducer = (store, {type, payload}) => {
-    console.log(type, payload)
     switch(type) {
         case FETCH_MOVIES:
             return {
